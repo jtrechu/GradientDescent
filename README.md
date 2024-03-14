@@ -2,7 +2,7 @@
 Performing Gradient descent for real valued functions. (https://en.wikipedia.org/wiki/Gradient_descent)
 The bulk of this file is the function `gradient.descent`, which performs gradient based algorithm in order to obtain local extrema of a function. We now discus each of its parameters:
   - `f` : the function in which we want to perform gradient descent (if the function is higher dimensional the function should still only have one parameter, and each variable be a component of said parameter, this is instead of `function(x,y){x+y}` one must use `function(x){x[1]+x[2]}`
-  -  `gradf` : the gradient of `f` as a function, i the same form as `f`
+  -  `gradf` : the gradient of `f` as a function, in the same form as `f`
   -  `x0` : starting point for initializing our algorithm
   -  `iterations` : total number of iterations we want to perform
   -  `eta` : the step size for our algorithm
