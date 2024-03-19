@@ -21,7 +21,7 @@ gradient.descent <- function(f, grad_f, x0, iterations=50000, eta=0.0002, moment
     x <- gradient$x[1]
     support <- seq(-xlim+x, 2+xlim, by = detail)
     plot(support, f(support), type = "l", main = paste(max ,"by gradient", asc),xlab = "x", ylab = "f(x)", lwd = 2, col = "red", ylim = c(-5,5))
-    lines(support,gradf(support), type = "l", col = "blue", lwd = 2, lty = "dashed")
+    lines(support,grad_f(support), type = "l", col = "blue", lwd = 2, lty = "dashed")
     points(c(gradient$x),c((gradient$f)),col = "black", pch = 16)
     legend("bottomleft", legend = c(expression(paste(f(x))), expression(paste("f '"(x))), paste("Gradient", asc, max,"with x0 =", as.character(x0))),
            col = c("red", "blue", "black"), lty = c("solid", "dashed", "blank"), lwd = 2, pch = c(NA, NA, 19), cex = .6)
