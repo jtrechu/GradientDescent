@@ -3,12 +3,11 @@ library(ggplot2)
 
 ##Gradient based method
 
-gradient.descent <- function(f, gradf, x0, iterations=50000, eta=0.0002, momentum = 0, ascent = FALSE, xlim = 3, ylim = 3, detail =0.1) {
+gradient.descent <- function(f, grad_f, x0, iterations=50000, eta=0.0002, momentum = 0, ascent = FALSE, xlim = 3, ylim = 3, detail =0.1) {
   max <- ifelse(ascent,"Maximum","Minimum")
   asc <- ifelse(ascent,"ascent","descent")
   x <- x0
-  neg_gradf <- function(x){return(-1*gradf(x))}
-  grad_f <- ifelse(ascent,neg_gradf,gradf)
+  eta <- ifelse(ascent, -1*eta, eta)
   step <- 0
   for (i in 1:iterations){
     step <- momentum*step - eta*grad_f(x)
